@@ -13,16 +13,39 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import myLib.*;
+
+
 public class Controller implements Initializable {
 
-    FileChooser fileChooser = new FileChooser();
-    DirectoryChooser directoryChooser = new DirectoryChooser();
-
+    private FileChooser fileChooser = new FileChooser();
+    private DirectoryChooser directoryChooser = new DirectoryChooser();
     @FXML
     Button btn_zf;
 
     @FXML
+    Button btn_uz;
+
+    @FXML
     Label mLabel;
+
+    public void unZip() throws Exception {
+        File zipFile = fileChooser.showOpenDialog(new Stage());
+        if (null != zipFile) {
+            mLabel.setText(zipFile.getAbsolutePath());
+            File destDir = directoryChooser.showDialog(new Stage());
+            if (null != destDir) {
+                mLabel.setText(destDir.getAbsolutePath());
+                //todo 链接到Myzip类解压
+                MyZip.unZip(zipFile.getAbsoluteFile(), destDir.getAbsolutePath());
+                mLabel.setText("压缩到了" + destDir.getAbsolutePath());
+            } else {
+                mLabel.setText("没有选择要解压到的文件夹");
+            }
+        } else {
+            mLabel.setText("没有选择要解压的文件");
+        }
+    }
 
     public void zipFiles() {
         File inDir = directoryChooser.showDialog(new Stage());
@@ -35,7 +58,7 @@ public class Controller implements Initializable {
                 System.out.println(inDir.getName());
                 System.out.println(outDir.getAbsolutePath());
                 System.out.println(outDir.getAbsolutePath() + inDir.getName()+ ".zip");
-                ZipUtil.pack(new File(inDir.getAbsolutePath()), new File(outDir.getAbsolutePath() + "/" + inDir.getName()+ ".zip"));
+                ZipUtil.pack(new File(inDir.getAbsolutePath()), new File(outDir.getAbsolutePath() + File.separator + inDir.getName()+ ".zip"));
                 mLabel.setText("压缩到了"+outDir.getAbsolutePath());
             } else {
                 mLabel.setText("没有选择要压缩到的文件夹");
@@ -48,6 +71,6 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btn_zf.setText("ZIP");
-        mLabel.setText("点左边的按钮选择要压缩的文件夹、要压缩到的文件夹");
+        mLabel.setText("点击ZIP压缩，点击UNZIP解压缩");
     }
 }

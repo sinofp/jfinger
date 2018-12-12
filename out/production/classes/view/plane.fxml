@@ -6,7 +6,8 @@
 
 <ToolBar prefHeight="40.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
   <items>
-    <Button fx:id="btn_zf" mnemonicParsing="false" onAction="#zipFiles" text="ZipAFile" />
+    <Button fx:id="btn_zf" mnemonicParsing="false" onAction="#zipFiles" text="Zip" />
+      <Button fx:id="btn_uz" mnemonicParsing="false" onAction="#unZip" text="UnZip" />
       <Label fx:id="mLabel" text="Label" />
   </items>
 </ToolBar>

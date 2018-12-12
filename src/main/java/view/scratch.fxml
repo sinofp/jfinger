@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Extract">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                      <Button mnemonicParsing="false" text="Button" />
+                    </items>
+                  </ToolBar>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                      <Button mnemonicParsing="false" text="Button" />
+                    </items>
+                  </ToolBar>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" text="Button" />
+                    </buttons>
+                  </ButtonBar>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" text="Button" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+    <Tab text="Compress">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
