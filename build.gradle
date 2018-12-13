@@ -13,6 +13,10 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-nop:1.8.0-beta2'
     compile 'org.zeroturnaround:zt-zip:1.13'
+
+    // https://mvnrepository.com/artifact/org.tukaani/xz
+    compile group: 'org.tukaani', name: 'xz', version: '1.8'
+
     compile 'org.apache.commons:commons-compress:1.18'
 
     // https://mvnrepository.com/artifact/org.rauschig/jarchivelib

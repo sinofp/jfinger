@@ -70,7 +70,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btn_zf.setText("ZIP");
+        btn_zf.setText("UnZip");
         mLabel.setText("点击ZIP压缩，点击UNZIP解压缩");
     }
 }
