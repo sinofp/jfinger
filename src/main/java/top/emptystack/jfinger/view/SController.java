@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -19,10 +20,13 @@ public class SController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        pb_zip.setProgress(0.33);
+        Font font = Font.loadFont(getClass().getResourceAsStream("SourceHanSansCN-Normal.otf"), 16);
+//        System.out.println(font);
         setZippedFileChooser();
         setCb();
         setLables();
         setTextFields();
+
     }
 
     private void setTextFields() {
@@ -31,6 +35,7 @@ public class SController implements Initializable {
     }
 
     private void setLables() {
+//        lbl_src.setFont(Font.font(30));
         lbl_src.setText("点左边选要压缩的文件或文件夹");
         lbl_arc.setText("点左边选要解压的文件");
         lbl_dest.setText("点左边选要压缩到的文件夹");
@@ -190,7 +195,7 @@ public class SController implements Initializable {
         File destination = new File(destPath);
         File source = new File(srcPath);
 
-        if (null == archiveName) {
+        if (null == archiveName || archiveName.equals("这里压缩后的文件名，默认原文件名")) {
             archiveName = source.getName();
         }
         pb_zip.setProgress(0.3);
@@ -233,7 +238,7 @@ public class SController implements Initializable {
         File archive = new File(arcPath);
 //        File destination = new File(destPath);
         String name = null;
-        if (!txt_unzip.getText().isEmpty()) {
+        if (!txt_unzip.getText().isEmpty() && !txt_unzip.getText().equals("这里写解压后的文件夹名，默认原文件名，单个文件不会改名")) {
             // 直接用getText赋值的话，如果什么都没写也不返回空，会导致下面的检测失效
             name = txt_unzip.getText();
         } else {
@@ -241,5 +246,6 @@ public class SController implements Initializable {
         }
         top.emptystack.jfinger.lib.UnZip.doit(arcPath, destPath, name, pb_unzip, 0);
     }
-
 }
+
+

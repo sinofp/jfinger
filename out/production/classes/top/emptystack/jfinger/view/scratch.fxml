@@ -10,64 +10,65 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="top.emptystack.jfinger.view.SController">
-  <tabs>
-    <Tab onSelectionChanged="#clearPbZip" text="Extract">
-         <content>
-            <VBox maxHeight="-Infinity" prefWidth="100.0">
-               <children>
-                  <ProgressBar fx:id="pb_unzip" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" />
-                  <ToolBar maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#chooseArc" text="Choose File" />
-                        <Label fx:id="lbl_arc" text="Label" />
-                    </items>
-                  </ToolBar>
-                  <ToolBar maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#chooseDestE" text="Choose Destination" />
-                        <Label fx:id="lbl_destE" text="Label" />
-                    </items>
-                  </ToolBar>
-                  <ToolBar layoutX="10.0" layoutY="50.0" maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
-                     <items>
-                        <Button mnemonicParsing="false" onAction="#goUnZip" text="Go" />
-                        <TextField fx:id="txt_unzip" prefHeight="28.0" prefWidth="200.0" />
-                     </items>
-                  </ToolBar>
-               </children>
-            </VBox>
-         </content>
-    </Tab>
-    <Tab onSelectionChanged="#clearPbUnZip" text="Compress">
-         <content>
-            <VBox maxHeight="-Infinity" prefWidth="100.0">
-               <children>
-                  <ProgressBar fx:id="pb_zip" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" />
-                  <ToolBar prefHeight="40.0" prefWidth="200.0">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#chooseScourceFile" text="Choose File" />
-                        <Label text="/" />
-                        <Button mnemonicParsing="false" onAction="#chooseScourceDir" text="Choose Dir" />
-                        <Label fx:id="lbl_src" text="Label" />
-                    </items>
-                  </ToolBar>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#chooseDest" text="Choose Destination" />
-                        <Label fx:id="lbl_dest" text="Label" />
-                    </items>
-                  </ToolBar>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0">
-                     <items>
-                        <Button mnemonicParsing="false" onAction="#goZip" text="Go" />
-                        <TextField fx:id="txt_zip" prefHeight="28.0" prefWidth="200.0" />
-                        <ComboBox fx:id="cb" prefWidth="150.0" />
-                     </items>
-                  </ToolBar>
-               </children>
-            </VBox>
-         </content>
-    </Tab>
-  </tabs>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="top.emptystack.jfinger.view.SController">
+    <tabs>
+        <Tab onSelectionChanged="#clearPbZip" text="Extract">
+            <content>
+                <VBox maxHeight="1.7976931348623157E308" prefWidth="100.0">
+                    <children>
+                        <ProgressBar fx:id="pb_unzip" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" />
+                        <ToolBar maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#chooseArc" text="Choose File" />
+                                <Label fx:id="lbl_arc" text="Label" />
+                            </items>
+                        </ToolBar>
+                        <ToolBar maxHeight="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#chooseDestE" text="Choose Destination" />
+                                <Label fx:id="lbl_destE" text="Label" />
+                            </items>
+                        </ToolBar>
+                        <ToolBar layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#goUnZip" text="Go" />
+                                <TextField fx:id="txt_unzip" prefHeight="28.0" prefWidth="300.0" />
+                        <ComboBox prefWidth="150.0" visible="false" />
+                            </items>
+                        </ToolBar>
+                    </children>
+                </VBox>
+            </content>
+        </Tab>
+        <Tab onSelectionChanged="#clearPbUnZip" text="Compress">
+            <content>
+                <VBox maxHeight="-Infinity" prefWidth="100.0">
+                    <children>
+                        <ProgressBar fx:id="pb_zip" maxWidth="1.7976931348623157E308" prefWidth="200.0" progress="0.0" />
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#chooseScourceFile" text="Choose File" />
+                                <Label text="/" />
+                                <Button mnemonicParsing="false" onAction="#chooseScourceDir" text="Choose Dir" />
+                                <Label fx:id="lbl_src" text="Label" />
+                            </items>
+                        </ToolBar>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#chooseDest" text="Choose Destination" />
+                                <Label fx:id="lbl_dest" text="Label" />
+                            </items>
+                        </ToolBar>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#goZip" text="Go" />
+                                <TextField fx:id="txt_zip" prefHeight="28.0" prefWidth="300.0" />
+                                <ComboBox fx:id="cb" prefWidth="150.0" />
+                            </items>
+                        </ToolBar>
+                    </children>
+                </VBox>
+            </content>
+        </Tab>
+    </tabs>
 </TabPane>

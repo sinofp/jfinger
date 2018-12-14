@@ -53,30 +53,6 @@ public class MyZip {
         unZip(zipFile, destDir);
     }
 
-//    public static void zip(String oldDir, String newDir) throws IOException {
-////        Collection<File> filesToArchive = ...
-//        newDir = newDir.endsWith(File.separator)? newDir: newDir + File.separator;
-//        newDir = newDir + new File(oldDir).getName()+ ".zip";
-//        System.out.println(newDir);
-//        try (ArchiveOutputStream o = new ZipArchiveOutputStream(new BufferedOutputStream(new FileOutputStream(newDir), BUFFER_SIZE))) {
-//             File f = new File(oldDir);
-//            System.out.println(f.getAbsolutePath());
-////                // maybe skip directories for formats like AR that don't store directories
-////                ArchiveEntry entry = o.createArchiveEntry(f, entryName(f));
-////                // potentially add more flags to entry
-////                o.putArchiveEntry(entry);
-////                if (f.isFile()) {
-////                    try (InputStream i = Files.newInputStream(f.toPath())) {
-////                        IOUtils.copy(i, o);
-////                    }
-////                }
-////                o.closeArchiveEntry();
-//
-////            out.finish();
-//        }
-//    }
-
-
     public static void main(String[] args) throws Exception {
         System.out.println("hi");
         unZip("/home/unv/Desktop/test.zip", "/home/unv/Desktop/");
