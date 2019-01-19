@@ -6,7 +6,7 @@
 
 `jfinger` 是使用 [jarchivelib](https://rauschig.org/jarchivelib/) 为 Java 大作业写的一款压缩/解压缩软件，名称取自 **Java** 与布鲁诺·布加拉迪的替身 **Sticky Finger**.
 
-### 前置：
+#### 前置：
 >oracle-jdk8
 
 #### 支持的类型：
